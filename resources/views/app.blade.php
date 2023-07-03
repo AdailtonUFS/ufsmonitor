@@ -8,7 +8,7 @@
     @vite('resources/js/app.js')
     @inertiaHead
 </head>
-<body>
+<body class="w-screen h-screen flex flex-col">
 @inertia
 </body>
 </html>
