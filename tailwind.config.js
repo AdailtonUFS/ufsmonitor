@@ -8,9 +8,12 @@ module.exports = {
   theme: {
     extend: {
         colors:{
-            blue_main: {
-                500: "#0251A8",
+            blufs: {
+                500: "#004999",
             }
+        },
+        strokeWidth: {
+            '1.5': '1.5px'
         }
     },
   },
