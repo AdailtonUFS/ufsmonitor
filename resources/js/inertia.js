@@ -4,6 +4,7 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 
 import Logo from "./Pages/Components/Logo.vue";
 import ProfilePicture from "./Pages/Components/ProfilePicture.vue";
+import Map from "./Pages/Components/Map.vue";
 
 createInertiaApp({
     resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
@@ -12,6 +13,7 @@ createInertiaApp({
             .use(plugin)
             .component("Logo", Logo)
             .component("ProfilePicture", ProfilePicture)
+            .component("Map", Map)
             .mount(el)
     },
 })
