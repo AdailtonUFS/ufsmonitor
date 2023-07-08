@@ -1,14 +1,17 @@
 import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
+import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
+
+import Logo from "./Pages/Components/Logo.vue";
+import ProfilePicture from "./Pages/Components/ProfilePicture.vue";
 
 createInertiaApp({
-    resolve: name => {
-        const pages = import.meta.glob('./Pages/**/*.vue', { eager: true })
-        return pages[`./Pages/${name}.vue`]
-    },
+    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
     setup({ el, App, props, plugin }) {
-        createApp({ render: () => h(App, props) })
+        return createApp({ render: () => h(App, props) })
             .use(plugin)
+            .component("Logo", Logo)
+            .component("ProfilePicture", ProfilePicture)
             .mount(el)
     },
 })
