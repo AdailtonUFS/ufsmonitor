@@ -1,10 +1,7 @@
 <template>
   <main class="w-full h-full px-6 py-4">
-    <Map/>
+    <slot>
+
+    </slot>
   </main>
 </template>
-
-
-<script setup>
-// import Map from "../Components/Map.vue";
-</script>
